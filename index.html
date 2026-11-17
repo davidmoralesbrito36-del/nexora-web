@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA | Digital Studio</title>
+<meta name="description" content="NEXORA: diseño, contenido y estrategia para impulsar tu negocio en redes sociales.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+ --bg:#0c0c14; --panel:#171724; --purple:#8957ff;
+ --light:#b69aff; --white:#fff; --muted:#aaa9ba;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:Inter,sans-serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff15}
+.logo{font-family:Montserrat;font-size:25px;font-weight:800;letter-spacing:-1px}
+.logo span{color:var(--purple)}
+nav{display:flex;gap:27px;color:var(--muted);font-size:14px}
+nav a:hover{color:white}
+.btn{display:inline-block;background:var(--purple);padding:13px 21px;border-radius:30px;font-weight:700;font-size:14px;transition:.2s;border:1px solid var(--purple)}
+.btn:hover{transform:translateY(-3px);background:#7040e8}
+.btn.outline{background:transparent}
+.hero{padding:105px 0 90px;display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.eyebrow{color:var(--light);font-size:12px;letter-spacing:2px;font-weight:700}
+h1{font-family:Montserrat;font-size:clamp(42px,6vw,70px);line-height:1.08;margin:20px 0}
+.gradient{background:linear-gradient(90deg,#a88aff,#7545f7);color:transparent;background-clip:text}
+.hero p{color:var(--muted);line-height:1.8;max-width:510px;margin-bottom:27px}
+.hero-image{min-height:390px;border-radius:25px;position:relative;overflow:hidden;background:linear-gradient(145deg,#30205e,#171727 55%,#8957ff)}
+.hero-image:before{content:"N";position:absolute;font-size:350px;font-weight:800;color:#ffffff12;right:10px;top:-50px}
+.hero-card{position:absolute;bottom:25px;left:25px;right:25px;background:#11111ddd;backdrop-filter:blur(12px);border:1px solid #ffffff25;border-radius:17px;padding:24px}
+.hero-card strong{font-size:23px}.hero-card p{margin:8px 0 0}
+.stats{display:flex;gap:30px;margin-top:35px}
+.stats strong{display:block;font-size:22px;color:var(--light)}
+.stats small{color:var(--muted)}
+section{padding:85px 0}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font:700 clamp(30px,4vw,42px) Montserrat;margin-bottom:13px}
+.section-title p{color:var(--muted);line-height:1.7}
+.services,.portfolio,.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid #ffffff12;border-radius:19px;padding:27px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#8957ff80}
+.icon{font-size:28px;margin-bottom:20px}
+.card h3{margin-bottom:12px}
+.card p{font-size:14px;line-height:1.7;color:var(--muted)}
+.portfolio-card{border-radius:18px;overflow:hidden;background:var(--panel);border:1px solid #ffffff15}
+.portfolio-img{height:210px;display:flex;align-items:end;padding:20px;font:800 25px Montserrat;background-size:cover;background-position:center}
+.portfolio-info{padding:20px}
+.portfolio-info p{color:var(--muted);font-size:13px;margin-top:8px}
+.restaurant{background:linear-gradient(0deg,#000b,#0002),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700') center/cover}
+.gym{background:linear-gradient(0deg,#000b,#0002),url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700') center/cover}
+.barber{background:linear-gradient(0deg,#000b,#0002),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700') center/cover}
+.fashion{background:linear-gradient(0deg,#000b,#0002),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700') center/cover}
+.realestate{background:linear-gradient(0deg,#000b,#0002),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700') center/cover}
+.beauty{background:linear-gradient(0deg,#000b,#0002),url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700') center/cover}
+.plans .card{position:relative}
+.plans .featured{border:1px solid var(--purple);box-shadow:0 0 35px #8957ff20}
+.price{font-size:37px;font-weight:800;margin:22px 0 5px}
+.price small{font-size:13px;color:var(--muted);font-weight:400}
+ul{list-style:none;margin:23px 0}
+li{padding:10px 0;border-bottom:1px solid #ffffff10;font-size:13px;color:#ddd}
+li:before{content:"✓";color:#a88aff;margin-right:10px}
+.plans .btn{width:100%;text-align:center}
+.badge{background:#8957ff35;color:#c6adff;padding:6px 12px;border-radius:20px;font-size:11px}
+.instagram{background:linear-gradient(110deg,#21183b,#171724);border:1px solid #ffffff15;border-radius:25px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.instagram h2{font:700 32px Montserrat;margin:15px 0}
+.instagram p{color:var(--muted);line-height:1.7;margin-bottom:20px}
+.phone{max-width:270px;margin:auto;background:#fff;color:#171724;border-radius:32px;padding:20px;border:6px solid #333;min-height:370px}
+.phone .avatar{width:58px;height:58px;border-radius:50%;background:#171724;color:#a88aff;display:grid;place-items:center;font-size:27px;font-weight:800;margin-bottom:12px}
+.phone .grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:20px}
+.phone .grid div{height:105px;background:linear-gradient(145deg,#291c4d,#8957ff);border-radius:5px;display:grid;place-items:center;color:white;font-size:12px;text-align:center;padding:8px}
+.contact{background:linear-gradient(120deg,#261d48,#141b27);border:1px solid #ffffff20;border-radius:25px;padding:55px;text-align:center}
+.contact h2{font:700 37px Montserrat;margin-bottom:15px}
+.contact p{color:var(--muted);margin-bottom:25px;line-height:1.7}
+footer{border-top:1px solid #ffffff15;padding:30px 0;color:var(--muted);font-size:13px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:750px){
+ nav{display:none}
+ .hero{grid-template-columns:1fr;padding:70px 0}
+ .hero-image{min-height:310px}
+ .services,.portfolio,.plans{grid-template-columns:1fr}
+ .instagram{grid-template-columns:1fr;padding:25px}
+ .contact{padding:35px 20px}
+ .stats{gap:18px}
+}
+</style>
+</head>
+<body>
+
+<header class="container">
+ <a class="logo" href="#">N<span>.</span> NEXORA</a>
+ <nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#planes">Precios</a>
+  <a href="#contacto">Contacto</a>
+ </nav>
+ <a href="#contacto" class="btn">Hablemos ↗</a>
+</header>
+
+<main>
+<section class="hero container" id="inicio">
+ <div>
+  <div class="eyebrow">NEXORA DIGITAL STUDIO</div>
+  <h1>Haz crecer tu negocio en <span class="gradient">redes sociales.</span></h1>
+  <p>Creamos contenido visual estratégico para que tu marca destaque, conecte con nuevos clientes y venda más.</p>
+  <a href="#contacto" class="btn">Impulsa tu negocio →</a>
+  <div class="stats">
+   <div><strong>01</strong><small>Estrategia</small></div>
+   <div><strong>02</strong><small>Creatividad</small></div>
+   <div><strong>03</strong><small>Resultados</small></div>
+  </div>
+ </div>
+ <div class="hero-image">
+  <div class="hero-card">
+   <strong>Tu marca merece destacar.</strong>
+   <p>Diseño · Contenido · Estrategia digital</p>
+  </div>
+ </div>
+</section>
+
+<section id="servicios">
+ <div class="container">
+  <div class="section-title">
+   <h2>Nuestros <span class="gradient">servicios</span></h2>
+   <p>Soluciones digitales adaptadas a las necesidades de tu negocio.</p>
+  </div>
+  <div class="services">
+   <article class="card"><div class="icon">✦</div><h3>Redes sociales</h3><p>Planificación y creación de contenido para mantener activa tu marca y conectar con tu audiencia.</p></article>
+   <article class="card"><div class="icon">◈</div><h3>Diseño gráfico</h3><p>Historias, publicaciones y diseños promocionales con una identidad visual coherente.</p></article>
+   <article class="card"><div class="icon">▶</div><h3>Edición de vídeo</h3><p>Reels y vídeos cortos pensados para captar la atención y comunicar tu mensaje.</p></article>
+   <article class="card"><div class="icon">▦</div><h3>Códigos QR</h3><p>Códigos personalizados para menús, cartas, enlaces y contacto.</p></article>
+   <article class="card"><div class="icon">↗</div><h3>Estrategia digital</h3><p>Ideas y planificación de contenido para mejorar tu presencia online.</p></article>
+   <article class="card"><div class="icon">◎</div><h3>Identidad visual</h3><p>Diseño de elementos gráficos para transmitir una imagen profesional.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="portfolio">
+ <div class="container">
+  <div class="section-title">
+   <h2>Nuestro <span class="gradient">portfolio</span></h2>
+   <p>Diseños de demostración para diferentes tipos de negocios.</p>
+  </div>
+  <div class="portfolio">
+   <article class="portfolio-card"><div class="portfolio-img restaurant">Gastronomía</div><div class="portfolio-info"><h3>Restaurantes</h3><p>Menús, promociones y platos destacados.</p></div></article>
+   <article class="portfolio-card"><div class="portfolio-img gym">Fitness</div><div class="portfolio-info"><h3>Gimnasios</h3><p>Entrenamientos, clases y ofertas.</p></div></article>
+   <article class="portfolio-card"><div class="portfolio-img barber">Estilo</div><div class="portfolio-info"><h3>Barberías</h3><p>Servicios, citas y promociones.</p></div></article>
+   <article class="portfolio-card"><div class="portfolio-img fashion">Fashion</div><div class="portfolio-info"><h3>Tiendas de ropa</h3><p>Novedades y campañas de producto.</p></div></article>
+   <article class="portfolio-card"><div class="portfolio-img realestate">Homes</div><div class="portfolio-info"><h3>Inmobiliarias</h3><p>Presentación de propiedades.</p></div></article>
+   <article class="portfolio-card"><div class="portfolio-img beauty">Beauty</div><div class="portfolio-info"><h3>Centros de estética</h3><p>Tratamientos, servicios y reservas.</p></div></article>
+  </div>
+  <p style="color:#aaa9ba;font-size:12px;margin-top:18px;text-align:center">Los proyectos mostrados son ejemplos visuales, no resultados de clientes reales.</p>
+ </div>
+</section>
+
+<section id="planes">
+ <div class="container">
+  <div class="section-title">
+   <h2>Planes y <span class="gradient">precios</span></h2>
+   <p>Elige la solución que mejor se adapte a tu negocio.</p>
+  </div>
+  <div class="plans">
+   <article class="card">
+    <h3>Starter</h3><p>Ideal para empezar.</p>
+    <div class="price">59 €<small>/mes</small></div>
+    <ul><li>8 historias mensuales</li><li>2 diseños promocionales</li><li>Diseño personalizado</li></ul>
+    <a class="btn outline" href="#contacto">Elegir Starter</a>
+   </article>
+   <article class="card featured">
+    <span class="badge">MÁS POPULAR</span>
+    <h3 style="margin-top:18px">Growth</h3><p>Para negocios en crecimiento.</p>
+    <div class="price">99 €<small>/mes</small></div>
+    <ul><li>12 historias mensuales</li><li>4 publicaciones</li><li>2 Reels sencillos</li><li>Calendario de contenido</li></ul>
+    <a class="btn" href="#contacto">Elegir Growth</a>
+   </article>
+   <article class="card">
+    <h3>Premium</h3><p>Para una presencia más completa.</p>
+    <div class="price">149 €<small>/mes</small></div>
+    <ul><li>20 historias mensuales</li><li>8 publicaciones</li><li>4 Reels</li><li>Planificación mensual</li><li>Revisión de resultados</li></ul>
+    <a class="btn outline" href="#contacto">Elegir Premium</a>
+   </article>
+  </div>
+  <p style="color:#aaa9ba;font-size:12px;margin-top:18px;text-align:center">Precios orientativos. El alcance y las condiciones se concretan antes de contratar.</p>
+ </div>
+</section>
+
+<section>
+ <div class="container instagram">
+  <div>
+   <div class="eyebrow">SÍGUENOS EN INSTAGRAM</div>
+   <h2>Tu marca, en el siguiente nivel.</h2>
+   <p>Descubre nuestros diseños, ideas de contenido y propuestas creativas para negocios.</p>
+   <a class="btn" href="https://www.instagram.com/nexora.digital008/" target="_blank" rel="noopener">Visitar Instagram ↗</a>
+  </div>
+  <div class="phone">
+   <div class="avatar">N.</div>
+   <strong>NEXORA | Digital Studio</strong>
+   <p style="font-size:12px;color:#555;margin-top:8px">Marketing · Diseño · Estrategia</p>
+   <p style="font-size:11px;color:#555;margin-top:7px">Hacemos crecer tu negocio en redes sociales 🚀</p>
+   <div class="grid">
+    <div>DISEÑO<br>CREATIVO</div><div>ESTRATEGIA</div>
+    <div>CONTENIDO</div><div>NEXORA</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contacto">
+ <div class="container">
+  <div class="contact">
+   <div class="eyebrow">¿EMPEZAMOS?</div>
+   <h2>Impulsa tu <span class="gradient">negocio.</span></h2>
+   <p>Cuéntanos qué necesitas y prepararemos una propuesta adaptada a tu marca, sin compromiso.</p>
+   <a class="btn" href="mailto:DAVIDMORALESBRITO36@GMAIL:COM?subject=Quiero%20informaci%C3%B3n%20sobre%20NEXORA">Contactar ahora →</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <a class="logo" href="#">N<span>.</span> NEXORA</a>
+  <span>Digital Studio · Diseño y contenido digital</span>
+  <span>© 2026 NEXORA. Todos los derechos reservados.</span>
+ </div>
+</footer>
+</body>
+</html>
